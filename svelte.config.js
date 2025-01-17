@@ -1,5 +1,8 @@
-import { mdsvex } from "mdsvex";
 import adapter from '@sveltejs/adapter-auto';
+import { mdsvex } from 'mdsvex';
+import rehypeCallouts from 'rehype-callouts';
+
+Error.stackTraceLimit = Infinity;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,7 +13,9 @@ const config = {
 		adapter: adapter()
 	},
 
-    preprocess: [mdsvex()],
+	preprocess: [mdsvex({
+		rehypePlugins: [rehypeCallouts],
+	})],
     extensions: [".svelte", ".svx"]
 };
 

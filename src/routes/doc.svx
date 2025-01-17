@@ -1,0 +1,4 @@
+> [!quote]
+> Foo, bar, baz.
+>
+> &mdash; Julius Caesar
